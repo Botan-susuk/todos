@@ -34,10 +34,10 @@ class UpdateAccountForm(FlaskForm):
   username = StringField(label='Username', validators=[DataRequired(), Length(min=4, max=20)],
                          render_kw={'readonly':'readonly'})
   email = EmailField(label='Email', validators=[DataRequired(), Email()], render_kw={'readonly':'readonly'})
-  fullname = StringField(label='Fullname', render_kw={'placeholder':'Enter Fullname'})
+  fullname = StringField(label='Fullname', render_kw={'placeholder': 'Enter Fullname'})
   avatar = FileField(label='Update Profile Avatar', validators=[FileAllowed(['jpg', 'jpeg', 'png'])])
 
-  submit = SubmitField(label='Update Account')  
+  submit = SubmitField(label='Update Account')
 
 class TaskForm(FlaskForm):
   task = StringField(label='Task', validators=[DataRequired(), Length(min=4, max=50)], 
